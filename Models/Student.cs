@@ -10,8 +10,13 @@ namespace Hafiz136.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public String Stu_Name { get; set; }
+        [Required]
         public String  Stu_Cell { get; set; }
+        [Required]
+        public String Student_Picture { get; set; }
+        [Required]
         public String Email { get; set; }
     }
 }

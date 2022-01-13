@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -21,25 +21,31 @@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Student_Picture)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var hafiz in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Stu_Name)
+                @Html.DisplayFor(i => hafiz.Stu_Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Stu_Cell)
+                @Html.DisplayFor(k => hafiz.Stu_Cell)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(k => hafiz.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+               <img src="~/Projectimg/@hafiz.Student_Picture" style="height:100px;width:100px"/>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@hafiz.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@hafiz.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@hafiz.Id">Delete</a>
             </td>
         </tr>
 }
